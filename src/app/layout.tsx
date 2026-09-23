@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "شركة قافلة الغذاء لخدمات الإعاشة",
-  description: "الموقع الرسمي لـ شركة قافلة الغذاء لخدمات الإعاشة",
+  title: "شركة قافلة الغذاء لخدمات الإعاشة | Qafilat Alghidha Catering",
+  description: "شركة قافلة الغذاء لخدمات الإعاشة - إعداد الوجبات المطهية والجافة وتشغيل مطابخ الفنادق الموسمية وإعاشة حجاج بيت الله الحرام بمكة والمشاعر المقدسة. معتمدة بشهادات ISO 22000 و HACCP.",
 };
 
 export default function RootLayout({
@@ -15,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
-      <body className={inter.className}>{children}</body>
+    <html lang="ar" dir="rtl" className="scroll-smooth">
+      <body className={`${cairo.className} bg-stone-50 text-stone-900 antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
