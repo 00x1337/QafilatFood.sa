@@ -17,7 +17,7 @@ const services = [
     number: "01",
     title: "إعاشة المشاعر المقدسة",
     description: "تشغيل متكامل لخدمات الطعام والشراب في منى وعرفات، بخطط توزيع دقيقة تناسب كثافة الموسم وتنوّع الجنسيات.",
-    image: "/images/kitchen-operations.webp",
+    image: "/images/kitchen-operations-v2.webp",
     alt: "فريق مطبخ احترافي يجهز وجبات الإعاشة وفق معايير السلامة",
     points: ["وجبات ساخنة وجافة", "بوفيهات كبار الشخصيات", "إدارة التوزيع الميداني"],
   },
@@ -183,7 +183,7 @@ export default function Home() {
       <section className="section process-section">
         <div className="shell process-grid">
           <div className="process-visual">
-            <Image src="/images/kitchen-operations.webp" alt="عمليات تحضير وجبات منظمة داخل مطبخ قافلة الغذاء" fill sizes="(max-width: 900px) 100vw, 50vw" />
+            <Image src="/images/kitchen-operations-v2.webp" alt="عمليات تحضير وجبات منظمة داخل مطبخ قافلة الغذاء" fill sizes="(max-width: 900px) 100vw, 50vw" />
             <div className="visual-note"><strong>من المصدر</strong><span>إلى موقع التقديم</span></div>
           </div>
           <div className="process-content">
