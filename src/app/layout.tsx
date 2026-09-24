@@ -9,8 +9,10 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "شركة قافلة الغذاء لخدمات الإعاشة | Qafilat Alghidha Catering",
-  description: "شركة قافلة الغذاء لخدمات الإعاشة - إعداد الوجبات المطهية والجافة وتشغيل مطابخ الفنادق الموسمية وإعاشة حجاج بيت الله الحرام بمكة والمشاعر المقدسة. معتمدة بشهادات ISO 22000 و HACCP.",
+  title: "قافلة الغذاء | حلول الإعاشة في مكة والمشاعر المقدسة",
+  description: "حلول إعاشة متكاملة للبعثات والفنادق والجهات في مكة والمشاعر المقدسة، بطاقة تشغيلية تصل إلى 18,000 وجبة يوميًا واعتمادات ISO 22000 وHACCP.",
+  keywords: ["إعاشة مكة", "إعاشة الحج", "تشغيل مطابخ الفنادق", "وجبات الحجاج", "قافلة الغذاء"],
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
@@ -20,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
-      <body className={`${cairo.className} bg-stone-50 text-stone-900 antialiased`}>
+      <body className={`${cairo.className} antialiased`}>
         {children}
       </body>
     </html>
