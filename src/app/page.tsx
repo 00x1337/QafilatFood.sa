@@ -55,6 +55,21 @@ const certificates = [
   { code: "A+", name: "تصنيف بلدي", detail: "مقدمو خدمات المدن", ref: "2023011791" },
 ];
 
+const partners = [
+  { name: "طيران ناس", logo: "/partners/flynas.webp" },
+  { name: "مشارق", logo: "/partners/mashariq.webp" },
+  { name: "ركين", logo: "/partners/rakeen.webp" },
+  { name: "ضيوف البيت", logo: "/partners/al-bait-guests.webp" },
+  { name: "إكرام الضيف للسياحة", logo: "/partners/ikram-aldiyafa.webp" },
+  { name: "الماسية", logo: "/partners/almasiah.webp" },
+  { name: "Tabung Haji Travel", logo: "/partners/tabung-haji-travel.webp" },
+  { name: "JAD Travel & Tours", logo: "/partners/jad.webp" },
+  { name: "MKM Ticketing Travel & Tours", logo: "/partners/mkm.webp" },
+  { name: "Andalusia Travel & Tours", logo: "/partners/andalusia.webp" },
+  { name: "Tabung Haji", logo: "/partners/tabung-haji.webp" },
+  { name: "TRI-D Travel & Tours", logo: "/partners/tri-d.webp" },
+];
+
 export default function Home() {
   return (
     <main>
@@ -86,6 +101,7 @@ export default function Home() {
             <a href="#about">عن الشركة</a>
             <a href="#services">خدماتنا</a>
             <a href="#experience">خبراتنا</a>
+            <a href="#partners">شركاؤنا</a>
             <a href="#quality">الجودة</a>
           </nav>
 
@@ -97,6 +113,7 @@ export default function Home() {
               <a href="#about">عن الشركة</a>
               <a href="#services">خدماتنا</a>
               <a href="#experience">خبراتنا</a>
+              <a href="#partners">شركاؤنا</a>
               <a href="#quality">الجودة</a>
               <a href="#contact">اطلب عرضًا</a>
             </div>
@@ -211,6 +228,27 @@ export default function Home() {
               <div><strong>{project.total}</strong><span>{project.label}</span></div>
               <h3>{project.client}</h3>
               <p>{project.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="partners" className="section partners-section">
+        <div className="shell partners-heading">
+          <div>
+            <p className="eyebrow"><span />شركاء النجاح</p>
+            <h2>ثقة نعتز بها.<br /><em>وشراكات نصنع بها الأثر.</em></h2>
+          </div>
+          <p>نفخر بالعمل مع جهات محلية ودولية لخدمة ضيوف الرحمن وتقديم تجربة إعاشة موثوقة.</p>
+        </div>
+
+        <div className="shell partners-grid" aria-label="شعارات شركاء النجاح">
+          {partners.map((partner) => (
+            <article className="partner-card" key={partner.name}>
+              <div className="partner-logo">
+                <Image src={partner.logo} alt={`شعار ${partner.name}`} fill sizes="(max-width: 680px) 45vw, (max-width: 980px) 30vw, 18vw" />
+              </div>
+              <span>{partner.name}</span>
             </article>
           ))}
         </div>
