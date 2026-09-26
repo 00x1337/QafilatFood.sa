@@ -1,4 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+import { pageMetadata, serviceDetails, siteUrl } from "@/lib/site";
+
+export const metadata = pageMetadata("إعاشة الحج والعمرة وتشغيل المطابخ في مكة", "تعرّف على خدمات قافلة الغذاء لإعاشة الحج والعمرة، تشغيل مطابخ الفنادق وتوريد الوجبات في مكة المكرمة، وشركاء النجاح ومنهجية التشغيل.", "/");
 
 const ArrowIcon = ({ className = "" }: { className?: string }) => (
   <svg className={className} aria-hidden="true" viewBox="0 0 24 24" fill="none">
@@ -73,6 +77,7 @@ const partners = [
 export default function Home() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "قافلة الغذاء", url: siteUrl, address: { "@type": "PostalAddress", addressLocality: "مكة المكرمة", addressCountry: "SA" } }).replace(/</g, "\\u003c") }} />
       <a className="skip-link" href="#main-content">انتقل إلى المحتوى</a>
 
       <div className="announcement">
@@ -105,7 +110,7 @@ export default function Home() {
             <a href="#quality">الجودة</a>
           </nav>
 
-          <a className="nav-cta" href="#contact">اطلب عرضًا <ArrowIcon /></a>
+          <Link className="nav-cta" href="/contact">جهّز طلبك <ArrowIcon /></Link>
 
           <details className="mobile-nav">
             <summary aria-label="فتح القائمة"><span /><span /></summary>
@@ -115,7 +120,7 @@ export default function Home() {
               <a href="#experience">خبراتنا</a>
               <a href="#partners">شركاؤنا</a>
               <a href="#quality">الجودة</a>
-              <a href="#contact">اطلب عرضًا</a>
+              <Link href="/contact">جهّز طلبك</Link>
             </div>
           </details>
         </div>
@@ -128,10 +133,10 @@ export default function Home() {
         <div className="shell hero-content" id="main-content">
           <div className="hero-copy">
             <p className="eyebrow light"><span />من مكة إلى ضيوف الرحمن</p>
-            <h1>إعاشة تُدار<br />بـ<span>إتقان.</span></h1>
+            <h1>إعاشة تليق<br />بـ<span>ضيوف الرحمن.</span></h1>
             <p className="hero-lead">نصنع تجربة غذائية آمنة وموثوقة للبعثات والفنادق والجهات، بطاقة تشغيلية تصل إلى 18,000 وجبة يوميًا.</p>
             <div className="hero-actions">
-              <a className="button button-gold" href="#contact">تحدث مع فريقنا <ArrowIcon /></a>
+              <Link className="button button-gold" href="/contact">جهّز طلب الإعاشة <ArrowIcon /></Link>
               <a className="text-link" href="#services">اكتشف قدراتنا <ArrowIcon /></a>
             </div>
           </div>
@@ -146,7 +151,7 @@ export default function Home() {
         </div>
 
         <div className="shell hero-stats" aria-label="أرقام الشركة">
-          <div><strong>+25,000</strong><span>حاج تمت خدمتهم</span></div>
+          <div><strong>3</strong><span>مجالات لخدمات الإعاشة</span></div>
           <div><strong>4</strong><span>اعتمادات رئيسية</span></div>
           <div><strong>A+</strong><span>تصنيف مقدمي الخدمات</span></div>
           <div><strong>1444هـ</strong><span>بداية رحلتنا</span></div>
@@ -181,16 +186,17 @@ export default function Home() {
         </div>
 
         <div className="shell service-list">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <article className="service-card" key={service.number}>
               <div className="service-image-wrap">
-                <Image src={service.image} alt={service.alt} fill sizes="(max-width: 900px) 100vw, 38vw" className="service-image" />
+                <Image src={service.image} alt={service.alt} fill sizes="(max-width: 980px) 100vw, 33vw" className="service-image" />
                 <span className="service-number">{service.number}</span>
               </div>
               <div className="service-body">
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
                 <ul>{service.points.map((point) => <li key={point}><CheckIcon />{point}</li>)}</ul>
+                <Link className="inline-link" href={`/services/${serviceDetails[index].slug}`}>تفاصيل {serviceDetails[index].short} <ArrowIcon /></Link>
               </div>
             </article>
           ))}
@@ -200,7 +206,7 @@ export default function Home() {
       <section className="section process-section">
         <div className="shell process-grid">
           <div className="process-visual">
-            <Image src="/images/kitchen-operations-v2.webp" alt="عمليات تحضير وجبات منظمة داخل مطبخ قافلة الغذاء" fill sizes="(max-width: 900px) 100vw, 50vw" />
+            <Image src="/images/kitchen-operations-v2.webp" alt="صورة توضيحية لعمليات تجهيز الوجبات في مطبخ تجاري" fill sizes="(max-width: 900px) 100vw, 50vw" />
             <div className="visual-note"><strong>من المصدر</strong><span>إلى موقع التقديم</span></div>
           </div>
           <div className="process-content">
@@ -272,6 +278,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section faq-section">
+        <div className="shell faq-layout"><div><p className="eyebrow"><span />قبل أن نبدأ</p><h2>أسئلة تساعدك<br />على <em>التخطيط.</em></h2></div><div className="faq-list">
+          <details><summary>ما خدمات الإعاشة المتاحة؟</summary><p>تشمل الخدمات إعاشة الحج والعمرة، تشغيل مطابخ الفنادق، والوجبات المغلفة والولائم. لكل خدمة صفحة توضح نطاق العمل والمعلومات المطلوبة للتخطيط.</p></details>
+          <details><summary>ما المعلومات المطلوبة لتجهيز طلب عرض؟</summary><p>نوع الخدمة، عدد المستفيدين، تاريخ البدء، مدة التشغيل وموقع الخدمة، مع أي متطلبات غذائية أو طريقة تقديم مفضلة.</p></details>
+          <details><summary>هل السعر والتوفر ثابتان؟</summary><p>يعتمد نطاق العرض على الكميات والقائمة والموقع والتوقيت. تجهيز ملخص الطلب في الموقع لا يُعد حجزًا أو تأكيدًا للتوفر أو السعر.</p></details>
+          <details><summary>هل الصور المعروضة من مرافق الشركة؟</summary><p>صور الطعام والمطابخ في هذه النسخة صور توضيحية مولّدة، وليست صورًا توثيقية لمرافق الشركة أو مشاريعها.</p></details>
+        </div></div>
+      </section>
+
       <section id="contact" className="contact-section">
         <div className="shell contact-card">
           <div>
@@ -280,7 +295,7 @@ export default function Home() {
           </div>
           <div className="contact-info">
             <p>مكة المكرمة — حي ولي العهد<br />حي المحمدية، شارع الشهيد ياسر بن حسب الله المولد</p>
-            <a className="button button-gold" href="#company-details">بيانات الشركة <ArrowIcon /></a>
+            <Link className="button button-gold" href="/contact">جهّز متطلبات مشروعك <ArrowIcon /></Link>
           </div>
         </div>
       </section>
@@ -301,6 +316,7 @@ export default function Home() {
           <p>شركة قافلة الغذاء لخدمات الإعاشة (شركة شخص واحد)</p>
           <p>© {new Date().getFullYear()} جميع الحقوق محفوظة</p>
         </div>
+        <nav className="shell footer-links" aria-label="روابط إضافية"><Link href="/contact">تجهيز الطلب</Link><Link href="/privacy">الخصوصية</Link><a href="#services">خدمات الإعاشة</a><span>صور الطعام والمطابخ توضيحية مولّدة.</span></nav>
       </footer>
     </main>
   );

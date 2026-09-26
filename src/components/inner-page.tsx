@@ -1,0 +1,4 @@
+import Link from "next/link";
+export default function InnerPage({ title, description, children }: { title: string; description: string; children: React.ReactNode }) {
+  return <><header className="inner-header"><div className="shell"><Link className="inner-brand" href="/">قافلة الغذاء <small>لخدمات الإعاشة</small></Link><nav aria-label="التنقل"><Link href="/#services">الخدمات</Link><Link href="/#partners">شركاؤنا</Link><Link href="/contact">طلب عرض</Link></nav></div></header><main id="content"><section className="inner-hero"><div className="shell"><Link className="breadcrumb" href="/">الرئيسية /</Link><h1>{title}</h1><p>{description}</p></div></section>{children}</main><footer className="inner-footer shell"><Link href="/">قافلة الغذاء لخدمات الإعاشة</Link><Link href="/privacy">الخصوصية</Link><span>مكة المكرمة · © {new Date().getFullYear()}</span></footer></>;
+}

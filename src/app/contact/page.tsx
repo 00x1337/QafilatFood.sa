@@ -1,0 +1,5 @@
+import InnerPage from "@/components/inner-page";
+import RequestForm from "@/components/request-form";
+import { contact, pageMetadata } from "@/lib/site";
+export const metadata = pageMetadata("طلب عرض خدمات إعاشة في مكة", "جهّز تفاصيل احتياجك من إعاشة الحج والعمرة أو تشغيل مطابخ الفنادق أو توريد الوجبات لدى قافلة الغذاء.", "/contact");
+export default function ContactPage() { return <InnerPage title="كل شراكة تبدأ بفهم احتياجك." description="حدد الخدمة والعدد والموقع والموعد لتجهيز ملخص واضح لطلبك."><section className="shell detail-grid section"><div><h2>تفاصيل المشروع</h2><RequestForm /></div><aside className="contact-aside"><p className="eyebrow">قافلة الغذاء</p><h2>مكة المكرمة</h2><p>حي ولي العهد / حي المحمدية<br />شارع الشهيد ياسر بن حسب الله المولد</p>{contact.phone && <a href={`tel:${contact.phone}`} dir="ltr">{contact.phone}</a>}{contact.email && <a href={`mailto:${contact.email}`}>{contact.email}</a>}{!contact.email && !contact.phone && <p className="contact-pending">قنوات التواصل المباشر قيد التحديث. يمكنك تجهيز ملخص الطلب ونسخه؛ هذه الصفحة لا ترسل طلبات إلى الشركة حاليًا.</p>}<p>السجل التجاري: <bdi>4031275121</bdi></p></aside></section></InnerPage>; }
