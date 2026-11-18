@@ -48,8 +48,8 @@ const projects = [
   { total: "4,200", label: "حاج", client: "مشارق ركين", detail: "إعاشة حجاج إندونيسيا" },
   { total: "4,200", label: "حاج", client: "طيران ناس", detail: "خدمة المشاعر المقدسة" },
   { total: "3,800", label: "حاج VIP", client: "مشارق الماسية", detail: "بوفيهات ومأكولات آسيوية" },
-  { total: "3,500", label: "حاج", client: "حجاج إندونيسيا", detail: "مؤسسة جنوب شرق آسيا" },
-  { total: "4,500", label: "حاج", client: "حجاج باكستان", detail: "مؤسسة جنوب آسيا" },
+  { total: "3,500", label: "حاج", client: "حجاج إندونيسيا", detail: "مشارق الذهبية (سنا)" },
+  { total: "4,500", label: "حاج", client: "حجاج باكستان", detail: "مشارق المتميزة (ركين)" },
 ];
 
 const certificates = [
