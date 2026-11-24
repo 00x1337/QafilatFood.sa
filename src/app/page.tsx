@@ -45,7 +45,6 @@ const services = [
 
 const projects = [
   { total: "4,600", label: "حاج VIP", client: "حجاج باكستان", detail: "إعاشة فندقية وبوفيهات مفتوحة" },
-  { total: "4,200", label: "حاج", client: "مشارق ركين", detail: "إعاشة حجاج إندونيسيا" },
   { total: "4,200", label: "حاج", client: "طيران ناس", detail: "خدمة المشاعر المقدسة" },
   { total: "3,800", label: "حاج VIP", client: "مشارق الماسية", detail: "بوفيهات ومأكولات آسيوية" },
   { total: "3,500", label: "حاج", client: "حجاج إندونيسيا", detail: "مشارق الذهبية (سنا)" },
@@ -223,7 +222,7 @@ export default function Home() {
           <h2>أرقام تحكي عن <em>الثقة.</em></h2>
           <p>خبرة ميدانية مع بعثات وشركات طوافة في مواسم الحج.</p>
         </div>
-        <div className="shell project-grid">
+        <div className={`shell project-grid${projects.length % 3 === 2 ? " grid-fill" : ""}`}>
           {projects.map((project) => (
             <article key={`${project.client}-${project.total}`}>
               <div><strong>{project.total}</strong><span>{project.label}</span></div>
