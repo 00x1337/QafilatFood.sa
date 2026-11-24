@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.sites-runtime/
+
+# local npm cache used when ~/.npm is not writable
+/.npm-cache/

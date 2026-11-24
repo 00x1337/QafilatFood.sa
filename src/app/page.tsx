@@ -90,12 +90,7 @@ export default function Home() {
       <header className="site-header">
         <div className="shell nav-wrap">
           <a href="#top" className="brand" aria-label="قافلة الغذاء - الصفحة الرئيسية">
-            <span className="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M10 29.5c7.5-1 11.5-4.4 14-11.5 2.2 6.6 6.8 10.5 14 11.5-6.7 1.3-11.5 4.8-14 11.5-2.4-6.6-6.9-10.3-14-11.5Z" fill="currentColor" />
-                <path d="M16 11h16M19 15h10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-              </svg>
-            </span>
+            <Image className="brand-mark" src="/brand/qafilat-mark-gold.png" alt="" width={76} height={54} priority />
             <span className="brand-copy">
               <strong>قافلة الغذاء</strong>
               <small>QAFILAT ALGHIDHA</small>
@@ -303,8 +298,7 @@ export default function Home() {
       <footer id="company-details" className="footer">
         <div className="shell footer-top">
           <div className="brand footer-brand">
-            <span className="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M10 29.5c7.5-1 11.5-4.4 14-11.5 2.2 6.6 6.8 10.5 14 11.5-6.7 1.3-11.5 4.8-14 11.5-2.4-6.6-6.9-10.3-14-11.5Z" fill="currentColor" /><path d="M16 11h16M19 15h10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" /></svg></span>
-            <span className="brand-copy"><strong>قافلة الغذاء</strong><small>لخدمات الإعاشة</small></span>
+            <Image className="footer-logo" src="/brand/qafilat-logo-gold.png" alt="قافلة الغذاء" width={108} height={104} />
           </div>
           <div className="company-data">
             <div><span>السجل التجاري</span><strong>4031275121</strong></div>
