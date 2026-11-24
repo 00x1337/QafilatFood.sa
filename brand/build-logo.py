@@ -89,6 +89,11 @@ def main() -> None:
     app_icon(full_gold, 180, pad_frac=0.10).save(APP / "apple-icon.png", optimize=True)
     social_card(full_gold).save(APP / "opengraph-image.png", optimize=True)
 
+    # Browsers and link-preview bots still probe /favicon.ico directly, so keep a
+    # real multi-size icon there instead of answering 404.
+    favicon = app_icon(full_gold, 48, pad_frac=0.09).convert("RGBA")
+    favicon.save(ROOT.parent / "public" / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
+
     print("logo", full_gold.size, "| mark", (full_gold.width, MARK_BOTTOM))
 
 
