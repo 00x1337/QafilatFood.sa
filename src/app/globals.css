@@ -160,6 +160,8 @@ h2 { margin:0; font-size:clamp(2.5rem,5vw,4.65rem); line-height:1.15; letter-spa
 .company-data div { display:flex; flex-direction:column; gap:9px; }
 .company-data span { color:rgba(255,255,255,.48); font-size:.7rem; }
 .company-data strong { font-family:Arial,sans-serif; font-size:.82rem; letter-spacing:.03em; }
+.company-data a { display:block; text-align:right; }
+.company-data a + a { margin-top:7px; }
 .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:24px; display:flex; justify-content:space-between; color:rgba(255,255,255,.4); font-size:.7rem; }
 
 @media (max-width:980px) {
@@ -264,7 +266,7 @@ button { font:inherit; cursor:pointer; }
 .request-result { border-top:1px solid var(--line); margin-top:24px; padding-top:24px; }
 .request-result .button { margin-top:16px; }
 .contact-aside { margin-top:0; overflow-wrap:anywhere; }
-.contact-aside>a { display:block; text-decoration:underline; }
+.contact-aside>a { display:block; text-decoration:underline; text-align:right; }
 .contact-pending { border-top:1px solid #c9bda7; padding-top:20px; }
 .privacy-copy { max-width:850px; }
 .privacy-copy h2:not(:first-child) { margin-top:38px; }

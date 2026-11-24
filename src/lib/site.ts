@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const siteUrl = "https://qafilat-alghidha.hkim23076.chatgpt.site";
 // Populate only with company-approved contact details before public launch.
-export const contact = { phone: "", email: "info@qafilatfood.sa", whatsapp: "" };
+export const contact = { phone: "+966597896656", phoneDisplay: "+966 59 789 6656", email: "info@qafilatfood.sa", whatsapp: "" };
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   return { title, description, alternates: { canonical: `${siteUrl}${path}` },
     openGraph: { title, description, url: `${siteUrl}${path}`, siteName: "قافلة الغذاء", locale: "ar_SA", type: "website" },

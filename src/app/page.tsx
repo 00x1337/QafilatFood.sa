@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { pageMetadata, serviceDetails, siteUrl } from "@/lib/site";
+import { contact, pageMetadata, serviceDetails, siteUrl } from "@/lib/site";
 
 export const metadata = pageMetadata("إعاشة الحج والعمرة وتشغيل المطابخ في مكة", "تعرّف على خدمات قافلة الغذاء لإعاشة الحج والعمرة، تشغيل مطابخ الفنادق وتوريد الوجبات في مكة المكرمة، وشركاء النجاح ومنهجية التشغيل.", "/");
 
@@ -304,6 +304,10 @@ export default function Home() {
             <div><span>السجل التجاري</span><strong>4031275121</strong></div>
             <div><span>الرقم الضريبي</span><strong>311967702900003</strong></div>
             <div><span>رخصة بلدي</span><strong>440511147377</strong></div>
+            <div><span>للتواصل</span><strong>
+              <a href={`tel:${contact.phone}`} dir="ltr">{contact.phoneDisplay}</a>
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            </strong></div>
           </div>
         </div>
         <div className="shell footer-bottom">
